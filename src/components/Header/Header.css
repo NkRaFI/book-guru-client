@@ -1,0 +1,21 @@
+.headerLink{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px;
+    margin: 5px 15px;
+}
+
+.headerLink:focus,
+.headerLink:hover,
+.headerLink:visited,
+.headerLink:link,
+.headerLink:active {
+    text-decoration: none;
+}
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
