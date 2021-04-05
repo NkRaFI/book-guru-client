@@ -23,12 +23,11 @@ const AddBook = () => {
     const onSubmit = data => {
         const bookData = {
             title: data.bookName,
-            authorName: data.authorName,
+            authors: [data.authorName],
             price: data.price,
             thumbnailUrl: thumbnailUrl
           };
         
-        console.log(bookData);
         fetch('http://localhost:5055/addBook', {
         method: 'POST', 
         headers: {
@@ -36,7 +35,12 @@ const AddBook = () => {
         },
         body: JSON.stringify(bookData)
         })
-        .then(res => console.log('server side response', res))
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                alert("book added successfully, Go to the home page to see the book")
+            }
+        })
     };
 
     return (

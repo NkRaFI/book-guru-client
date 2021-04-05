@@ -8,9 +8,7 @@
     border-radius: 30px;
     background-color: rgb(240, 240, 240);
     margin: 20px;
-}
-.checkoutForm{
-    width: 20rem;
+    padding: 25px;
 }
 .checkoutForm > input{
     margin:20px 0px;

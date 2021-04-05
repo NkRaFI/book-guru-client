@@ -12,6 +12,16 @@ const ManageBook = () => {
             .then(data => setBooks(data))
     }, [])
 
+    const handleDelete = (id) =>{
+       fetch(`http://localhost:5055/deleteBook/${id}`, {method: 'DELETE'})
+       .then(res => res.json())
+       .then(data => {
+           if(data){
+            alert("book deleted successfully, please look at the home page to confirm")
+           }
+       })
+    }
+
     return (
         <div className="mx-2">
             <table className="table table-striped">
@@ -23,30 +33,32 @@ const ManageBook = () => {
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
-                {
-                    (books.length === 0) && 
-                    <div className="manageSpinner">
-                        <div className="spinner-border text-primary" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </div>
-                    </div>
-                }
                 <tbody>
                     {
                         books.map(book =>
                             <tr key={book._id}>
                                 <td>{book.title}</td>
-                                <td>{book.authorName || 'author name'}</td>
+                                <td>{book.authors[0]}</td>
                                 <td>${book.price}</td>
                                 <td>
                                     <img className="actionImg" src={editAction} alt=""/>
-                                    <img className="actionImg" src={deleteAction} alt=""/>
+                                    <img className="actionImg" onClick={()=>handleDelete(book._id)} src={deleteAction} alt=""/>
                                 </td>
                             </tr>
                         )
                     }
                 </tbody>
             </table>
+
+            {
+                (books.length === 0) && 
+                <div className="manageSpinner">
+                    <div className="spinner-border text-primary" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                </div>
+            }
+
         </div>
     );
 };

@@ -17,7 +17,11 @@ const Header = () => {
                         <Link className="headerLink" to="/home">Home</Link>
                         <Link className="headerLink" to="/orders">Orders</Link>
                         <Link className="headerLink" to="/admin">Admin</Link>
-                        <Link className="headerLink" to="/Deals">Deals</Link>
+                        {
+                            (loggedInUser?.email || loggedInUser?.name)
+                            ? <Link className="headerLink" to="/checkout">Checkout</Link>
+                            : <Link className="headerLink" to="/Deals">Deals</Link>
+                        }
                         {
                             (loggedInUser?.email || loggedInUser?.name) &&
                             <Link className="headerLink font-weight-bold avatar" to="/home"><img src={avatarImg} alt=""/> {loggedInUser.name}</Link>
