@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './DisplayBooks.css';
 
 const DisplayBooks = (props) => {
@@ -10,7 +11,7 @@ const DisplayBooks = (props) => {
                 <h5 className="my-3">{title}</h5>
                 <div className="d-flex justify-content-between my-3">
                     <h3 className="text-primary">${price}</h3>
-                    <button className="btn btn-primary">Buy now</button>
+                    <Link to={`/checkout/${_id}`}><button className="btn btn-primary">Buy now</button></Link>
                 </div>
             </div>
         </div>

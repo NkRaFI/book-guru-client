@@ -1,13 +1,43 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import './AddBook.css';
 
 const AddBook = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const [thumbnailUrl, setThumbnailUrl] = useState(null)
     const handleUpload =(event)=> {
-        console.log("from upload",event.target.files[0])
+        const imageData = new FormData();
+        imageData.set('key', '8dce128515bf5e69ae560e543b7c1c53');
+        imageData.append('image', event.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload',imageData)
+        .then(function (response) {
+            setThumbnailUrl(response.data.data.display_url);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
     }
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const bookData = {
+            title: data.bookName,
+            authorName: data.authorName,
+            price: data.price,
+            thumbnailUrl: thumbnailUrl
+          };
+        
+        console.log(bookData);
+        fetch('http://localhost:5055/addBook', {
+        method: 'POST', 
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(bookData)
+        })
+        .then(res => console.log('server side response', res))
+    };
 
     return (
         <div className="addBook my-3 mx-3">

@@ -1,0 +1,14 @@
+.actionImg{
+    width: 25px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.manageSpinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 300px;
+    width: 500px;
+}

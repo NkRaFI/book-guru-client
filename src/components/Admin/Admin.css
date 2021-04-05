@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
 .adminDashboard{
     background-color: rgb(0, 13, 87);
     width: 100%;
@@ -14,11 +19,21 @@
     font-size: 3vh;
     text-align: center;
     margin: 10px 15px;
+    cursor: pointer;
 }
 .dashboardLink > img {
     width: 25px;
     margin-right: 10px;
-
+    cursor: pointer;
+}
+.adminTitle{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+    margin: 10px 20px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
 }
 
 @media (min-width: 768px) {

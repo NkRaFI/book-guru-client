@@ -1,0 +1,17 @@
+.checkout{
+    width:80%;
+    margin: auto;
+}
+.checkoutBg{
+    width:100%;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: rgb(240, 240, 240);
+    margin: 20px;
+}
+.checkoutForm{
+    width: 20rem;
+}
+.checkoutForm > input{
+    margin:20px 0px;
+}

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import './Header.css';
+import avatarImg from '../../icons/Avatar face.png';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
             <Navbar bg="transparent" expand="lg">
@@ -15,7 +18,15 @@ const Header = () => {
                         <Link className="headerLink" to="/orders">Orders</Link>
                         <Link className="headerLink" to="/admin">Admin</Link>
                         <Link className="headerLink" to="/Deals">Deals</Link>
-                        <Link className="headerLink btn btn-primary text-white" to="/login">Login</Link>
+                        {
+                            (loggedInUser?.email || loggedInUser?.name) &&
+                            <Link className="headerLink font-weight-bold avatar" to="/home"><img src={avatarImg} alt=""/> {loggedInUser.name}</Link>
+                        }
+                        {
+                            (loggedInUser?.email || loggedInUser?.name)
+                            ? <Link onClick={() => setLoggedInUser({})} className="headerLink btn btn-primary text-white" to="/login">Log Out</Link>
+                            : <Link className="headerLink btn btn-primary text-white" to="/login">Login</Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

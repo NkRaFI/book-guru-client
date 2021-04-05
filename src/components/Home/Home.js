@@ -25,6 +25,14 @@ const Home = () => {
                 </div>
                 <div className="row">
                     {
+                        (books.length === 0) &&
+                        <div className="manageSpinner">
+                            <div className="spinner-border text-primary" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    }
+                    {
                         books.map(book => <DisplayBooks book={book} key={book._id}></DisplayBooks>)
                     }
                 </div>
