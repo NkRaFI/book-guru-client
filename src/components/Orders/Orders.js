@@ -10,7 +10,6 @@ const Orders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [loggedInUser])
-    const counter = 0;
     return (
         <div>
             <Header></Header>

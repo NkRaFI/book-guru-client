@@ -11,9 +11,11 @@ const Checkout = () => {
     const [book, setBook] = useState({})
     const { title, thumbnailUrl, price, authors} = book;
     useEffect(() => {
-        fetch(`http://localhost:5055/getBookById/${id}`)
+        if(id){
+            fetch(`http://localhost:5055/getBookById/${id}`)
             .then(res => res.json())
             .then(data => setBook(data))
+        }
     }, [id])
 
     const { register, handleSubmit, formState: { errors } } = useForm();

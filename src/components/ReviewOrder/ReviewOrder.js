@@ -8,10 +8,20 @@ const ReviewOrder = () => {
     const [book, setBook] = useState({})
     const { title, authors, price } = book;
     useEffect(() => {
-        fetch(`http://localhost:5055/getBookById/${id}`)
+        if(id){
+            fetch(`http://localhost:5055/getBookById/${id}`)
             .then(res => res.json())
             .then(data => setBook(data))
+        }
     }, [id])
+
+    let isIdAssigned = true;
+    if(id){
+        isIdAssigned = false;
+    }
+    else{
+        isIdAssigned = true;
+    }
 
     return (
         <div>
@@ -41,7 +51,9 @@ const ReviewOrder = () => {
                         </tbody>
                     </table>
                     <div style={{width:'100%'}} className="d-flex justify-content-end my-3">
-                        <Link to={`/checkout/${id}`}><button className="btn btn-primary">Checkout</button></Link>
+                        <Link to={`/checkout/${id}`}>
+                            <button disabled={isIdAssigned} title={(id)? "Checkout order" : "🚫 please select a book first"} className="btn btn-primary">Checkout</button>
+                        </Link>
                     </div>
                 </div>
             </div>
