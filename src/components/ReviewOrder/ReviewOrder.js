@@ -18,7 +18,7 @@ const ReviewOrder = () => {
             <Header></Header>
             <div className="container my-5 p-5">
                 <div className="row px-md-5">
-                    <h3 className="mb-5">Review Order</h3>
+                    <h3 className="mb-5">Checkout</h3>
                     <table className="table bg-light rounded shadow">
                         <thead>
                             <tr>
@@ -29,7 +29,7 @@ const ReviewOrder = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{title}</td>
+                                <td>{title || "please select a book to review"}</td>
                                 <td>{authors?.[0]}</td>
                                 <td>${price}</td>
                             </tr>

@@ -19,7 +19,7 @@ const Header = () => {
                         <Link className="headerLink" to="/admin">Admin</Link>
                         {
                             (loggedInUser?.email || loggedInUser?.name)
-                            ? <Link className="headerLink" to="/checkout">Checkout</Link>
+                            ? <Link className="headerLink" to="/reviewOrder">Checkout</Link>
                             : <Link className="headerLink" to="/Deals">Deals</Link>
                         }
                         {

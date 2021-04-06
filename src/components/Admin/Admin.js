@@ -16,12 +16,14 @@ const Admin = () => {
 
     return (
         <div className="row">
-            <div className="col-12 col-md-3 py-3 adminDashboard">
-            <Link className="logo ml-3" to='/home'>BOOK GURU</Link>
-                <div className="d-flex flex-md-column justify-content-between justify-content-md-start align-items-start">
-                    <p onClick={() =>handleNavigation(setComponent('manageBook'))} className="dashboardLink"> <img src={manageImg} alt=""/>Manage books</p>
-                    <p onClick={() =>handleNavigation(setComponent('addBook'))} className="dashboardLink"> <img src={plusImg} alt=""/>Add book</p>
-                    <p onClick={() =>handleNavigation(setComponent('editBook'))} className="dashboardLink"> <img src={editImg} alt=""/>Edit book</p>
+            <div className="col-12 col-md-3">
+                <div className="adminDashboard py-3">
+                    <Link className="logo ml-3" to='/home'>BOOK GURU</Link>
+                    <div className="d-flex flex-md-column justify-content-between justify-content-md-start align-items-start">
+                        <p onClick={() =>handleNavigation(setComponent('manageBook'))} className="dashboardLink"> <img src={manageImg} alt=""/>Manage books</p>
+                        <p onClick={() =>handleNavigation(setComponent('addBook'))} className="dashboardLink"> <img src={plusImg} alt=""/>Add book</p>
+                        <p onClick={() =>handleNavigation(setComponent('editBook'))} className="dashboardLink"> <img src={editImg} alt=""/>Edit book</p>
+                    </div>
                 </div>
             </div>
             <div className="col-12 col-md-9">

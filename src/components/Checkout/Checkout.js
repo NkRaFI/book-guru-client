@@ -27,7 +27,7 @@ const Checkout = () => {
         .then(res => res.json())
         .then(data => {
             if(data){
-                alert("Your Order Placed Successfully!!")
+                alert("Your Order Placed Successfully!!, checkout orders page to see your orders")
             }
         })
     };
@@ -37,12 +37,12 @@ const Checkout = () => {
             <Header></Header>
             <div className="checkout d-flex justify-content-center">
                 <div className="checkoutBg">
-                    <h3 className="text-center mb-3">Checkout</h3>
+                    <h3 className="text-center mb-3">Place Order</h3>
                     <div className="row">
                         <div className="col-12 col-lg-6">
                             <div className="card mb-2 p-3" style={{ width: '100%', height: '465px' }}>
                                 <img className="img-fluid m-auto" style={{ width: '10rem' }} src={thumbnailUrl} alt="" />
-                                <h5 className="my-3">{title}</h5>
+                                <h5 className="my-3">{title || "please select a book for order"}</h5>
                                 <p>{authors?.[0]}</p>
                                 <div className="d-flex justify-content-center my-3">
                                     <h3 className="text-primary">${price}</h3>
@@ -60,7 +60,7 @@ const Checkout = () => {
                                 <input className="form-control" {...register("phone", { required: true })} placeholder="Phone" />
                                 {errors.phone && <span>This field is required</span>}
 
-                                <input className="form-control btn btn-outline-primary" type="submit" />
+                                <input className="form-control btn btn-outline-primary" type="submit" value="place order" />
                             </form>
                         </div>
                     </div>
