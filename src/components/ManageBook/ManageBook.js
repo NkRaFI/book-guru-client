@@ -16,9 +16,10 @@ const ManageBook = () => {
        fetch(`https://serene-falls-59401.herokuapp.com/deleteBook/${id}`, {method: 'DELETE'})
        .then(res => res.json())
        .then(data => {
-           if(data){
-            alert("book deleted successfully, please look at the home page to confirm")
-           }
+            alert("book deleted successfully");
+            fetch('https://serene-falls-59401.herokuapp.com/getBook')
+            .then(res => res.json())
+            .then(data => setBooks(data))
        })
     }
 
@@ -35,7 +36,7 @@ const ManageBook = () => {
                 </thead>
                 <tbody>
                     {
-                        books.map(book =>
+                        books.map((book) =>
                             <tr key={book._id}>
                                 <td>{book.title}</td>
                                 <td>{book.authors[0]}</td>
