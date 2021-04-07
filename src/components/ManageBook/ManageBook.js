@@ -21,6 +21,7 @@ const ManageBook = () => {
             .then(res => res.json())
             .then(data => setBooks(data))
        })
+       .catch(err => console.log(err));
     }
 
     return (
