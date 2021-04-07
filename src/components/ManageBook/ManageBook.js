@@ -23,7 +23,7 @@ const ManageBook = () => {
     }
 
     return (
-        <div className="position-relative mx-2">
+        <div className="table-responsive amx-auto mx-md-3">
             <table className="table table-striped">
                 <thead>
                     <tr>

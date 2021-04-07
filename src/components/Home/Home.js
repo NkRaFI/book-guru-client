@@ -16,7 +16,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <div className="container">
-                <div className="m-auto" style={{ width: '400px' }}>
+                <div className="m-auto" style={{ width: '70vh' }}>
                     <div className="my-5 d-flex">
                         <input className="form-control" type="text" placeholder="search" />
                         <button className="btn btn-primary">search</button>
