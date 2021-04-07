@@ -14,11 +14,6 @@
 .headerLink:active {
     text-decoration: none;
 }
-.logo{
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
 .avatar img{
     width: 30px;
 }

@@ -15,13 +15,13 @@ html, body {
 }
 .dashboardLink{
     color: white;
-    font-size: 3vh;
+    font-size: 2.5vw;
     text-align: center;
     margin: 10px 15px;
     cursor: pointer;
 }
 .dashboardLink > img {
-    width: 4vh;
+    width: 3vw;
     margin-right: 10px;
     cursor: pointer;
 }
@@ -34,11 +34,33 @@ html, body {
     background-color: rgb(240, 240, 240);
     border-radius: 15px;
 }
+.logo{
+    font-size: 5vw;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
 @media (min-width: 768px) {
     .adminDashboard{
         background-color: rgb(0, 13, 87);
         width: 100%;
         height: 100vh;
+    }
+    .dashboardLink{
+        color: white;
+        font-size: 1.5vw;
+        text-align: center;
+        margin: 10px 15px;
+        cursor: pointer;
+    }
+    .dashboardLink > img {
+        width: 1.5vw;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .logo{
+        font-size: 2vw;
+        font-weight: bold;
+        letter-spacing: 1px;
     }
 }

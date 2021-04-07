@@ -16,10 +16,12 @@ const Home = () => {
         <div>
             <Header></Header>
             <div className="container">
-                <div className="m-auto" style={{ width: '70vh' }}>
-                    <div className="my-5 d-flex">
-                        <input className="form-control" type="text" placeholder="search" />
-                        <button className="btn btn-primary">search</button>
+                <div className="d-flex justify-content-center">
+                    <div className="mx-auto" style={{ width: '70vw' }}>
+                        <div className="my-5 d-flex">
+                            <input className="form-control" type="text" placeholder="search" />
+                            <button className="btn btn-primary">search</button>
+                        </div>
                     </div>
                 </div>
                 <div className="row">
