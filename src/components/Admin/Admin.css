@@ -5,6 +5,7 @@ html, body {
 }
 .adminDashboard{
     background-color: rgb(0, 13, 87);
+    position: static;
 }
 .dashboardLink:focus,
 .dashboardLink:hover,
@@ -43,8 +44,9 @@ html, body {
 @media (min-width: 768px) {
     .adminDashboard{
         background-color: rgb(0, 13, 87);
-        width: 100%;
+        width: 25%;
         height: 100vh;
+        position: fixed;
     }
     .dashboardLink{
         color: white;
