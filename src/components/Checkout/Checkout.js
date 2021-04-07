@@ -12,7 +12,7 @@ const Checkout = () => {
     const { title, thumbnailUrl, price, authors} = book;
     useEffect(() => {
         if(id){
-            fetch(`http://localhost:5055/getBookById/${id}`)
+            fetch(`https://serene-falls-59401.herokuapp.com/getBookById/${id}`)
             .then(res => res.json())
             .then(data => setBook(data))
         }
@@ -21,7 +21,7 @@ const Checkout = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         const orderInfo = {...loggedInUser,book, shipment: data,orderTime: new Date()}
-        fetch('http://localhost:5055/placeOrder', {
+        fetch('https://serene-falls-59401.herokuapp.com/placeOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(orderInfo)

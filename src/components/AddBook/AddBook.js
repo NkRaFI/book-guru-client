@@ -28,7 +28,7 @@ const AddBook = () => {
             thumbnailUrl: thumbnailUrl
           };
         
-        fetch('http://localhost:5055/addBook', {
+        fetch('https://serene-falls-59401.herokuapp.com/addBook', {
         method: 'POST', 
         headers: {
             'content-type': 'application/json'

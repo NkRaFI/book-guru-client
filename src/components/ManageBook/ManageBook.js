@@ -7,13 +7,13 @@ const ManageBook = () => {
 
     const [books, setBooks] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5055/getBook')
+        fetch('https://serene-falls-59401.herokuapp.com/getBook')
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])
 
     const handleDelete = (id) =>{
-       fetch(`http://localhost:5055/deleteBook/${id}`, {method: 'DELETE'})
+       fetch(`https://serene-falls-59401.herokuapp.com/deleteBook/${id}`, {method: 'DELETE'})
        .then(res => res.json())
        .then(data => {
            if(data){

@@ -9,7 +9,7 @@ const ReviewOrder = () => {
     const { title, authors, price } = book;
     useEffect(() => {
         if(id){
-            fetch(`http://localhost:5055/getBookById/${id}`)
+            fetch(`https://serene-falls-59401.herokuapp.com/getBookById/${id}`)
             .then(res => res.json())
             .then(data => setBook(data))
         }
